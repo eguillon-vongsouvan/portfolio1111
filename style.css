@@ -209,20 +209,8 @@ footer {
 #about {
     font-family: 'Roboto', sans-serif; /* Police moderne */
     background-color: #f9f9f9;
-    padding: 50px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 0 auto;
 }
 
-/* Titres principaux */
-#about h2 {
-    font-size: 2.5em;
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
 
 /* Sous-titres */
 .section-title {
@@ -349,4 +337,3 @@ h2:hover, .section-title:hover {
         height: 120px;
     }
 }
-
