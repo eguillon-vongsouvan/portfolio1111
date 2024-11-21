@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -58,48 +59,75 @@
 
 
 <!-- Section Portfolio -->
+<!-- Section Portfolio -->
+<!-- Section Portfolio -->
 <section id="portfolio">
     <h2>Mon Portfolio</h2>
+
+    <!-- Filtres -->
+    <div class="filters">
+        <button class="filter-button" data-filter="all">Tous</button>
+        <button class="filter-button" data-filter="web">Web</button>
+        <button class="filter-button" data-filter="app">Applications</button>
+    </div>
+
+    <!-- Galerie de projets -->
     <div class="portfolio-gallery">
-        <div class="portfolio-item">
+        <!-- Projet 1 -->
+        <div class="portfolio-item web">
             <a href="Projet1.html" target="_blank">
                 <img src="https://chef-de-projet.fr/wp-content/uploads/2023/09/monday-to-do-1024x703.png" alt="Projet 1">
                 <h3>Application de gestion de tâches</h3>
                 <p>Application avec authentification, priorités, notifications et mode hors ligne.</p>
             </a>
         </div>
-        <div class="portfolio-item">
+        
+        <!-- Projet 2 -->
+        <div class="portfolio-item web">
             <a href="Projet2.html" target="_blank">
                 <img src="https://img.freepik.com/vecteurs-libre/modele-blog-entreprise_23-2148899518.jpg" alt="Projet 2">
                 <h3>Blog minimaliste</h3>
                 <p>CMS avec création d’articles, éditeur riche, commentaires, et SEO optimisé.</p>
             </a>
         </div>
-        <div class="portfolio-item">
+        
+        <!-- Projet 3 -->
+        <div class="portfolio-item app">
             <a href="Projet3.html" target="_blank">
                 <img src="https://www.leptidigital.fr/wp-content/uploads/2023/01/actu-marketplace.jpg" alt="Projet 3">
                 <h3>E-commerce simplifié</h3>
                 <p>Boutique avec gestion des produits, panier, paiements Stripe et dashboard admin.</p>
             </a>
         </div>
-        <div class="portfolio-item">
+        
+        <!-- Projet 4 -->
+        <div class="portfolio-item app">
             <a href="Projet4.html" target="_blank">
                 <img src="https://tool-advisor.fr/wp-content/uploads/2023/05/reseaux-sociaux-les-plus-populaires.png" alt="Projet 4">
                 <h3>Réseau social basique</h3>
                 <p>Profils, posts, likes, commentaires, et fil d’actualité en temps réel.</p>
             </a>
         </div>
-        <div class="portfolio-item">
+
+        <!-- Projet 5 -->
+        <div class="portfolio-item web">
             <a href="Projet5.html" target="_blank">
                 <img src="https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/fsvt55l8bqwxlu4wdpao/create-a-personal-finance-tracking-dashboard.png" alt="Projet 5">
                 <h3>Suivi des finances</h3>
                 <p>Suivi des revenus/dépenses avec graphiques interactifs et export des données.</p>
             </a>
         </div>
+
+        <!-- Nouveau Projet 6 -->
+        <div class="portfolio-item app">
+            <a href="Projet6.html" target="_blank">
+                <img src="https://img.freepik.com/vecteurs-premium/reservez-concept-billet-bus-ligne-idee-voyage-tourisme-planification-du-voyage-ligne-achetez-ticket-bus-dans-application-illustration_277904-4913.jpg" alt="Projet 6">
+                <h3>Application de réservation de billets</h3>
+                <p>Réservation de billets pour événements, voyages, avec paiement et gestion des réservations.</p>
+            </a>
+        </div>
     </div>
 </section>
-
-
 
     <!-- Section Contact -->
     <section id="contact">
@@ -121,6 +149,31 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Fresh Ladouille. Tous droits réservés.</p>
+        <script>
+            // Sélectionner tous les boutons de filtres et les éléments du portfolio
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+            // Ajouter un événement de clic à chaque bouton
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.getAttribute('data-filter');
+        
+                    // Montrer ou cacher les projets selon le filtre
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.classList.contains(filter)) {
+                            item.classList.add('visible');
+                        } else {
+                            item.classList.remove('visible');
+                        }
+                    });
+                });
+            });
+        
+            // Activer tous les projets au chargement
+            document.querySelector('[data-filter="all"]').click();
+        </script>
+        
     </footer>
 </body>
 </html>
